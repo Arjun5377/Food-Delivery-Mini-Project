@@ -16,8 +16,8 @@ class _HomeState extends State<Home> {
     var width = MediaQuery.of(context).size.width;
     return Scaffold(
         body: Container(
-          height: height*1,
-      width: width*1,
+      height: height * 1,
+      width: width * 1,
       decoration: BoxDecoration(
           image: DecorationImage(
               image: AssetImage(
@@ -25,83 +25,92 @@ class _HomeState extends State<Home> {
               ),
               fit: BoxFit.cover)),
       child: SafeArea(
-        child: Row(
+        child: Column(
           children: [
-            Row(
-              children: [
-                Container(
-                  height: height * 0.15,
-                  decoration: BoxDecoration(
-                      image: DecorationImage(
-                          image: AssetImage(
-                            "assets/Logo.jpg",
+            Padding(
+              padding: const EdgeInsets.only(top: 20.0),
+              child: Row(
+                children: [
+                  SizedBox(
+                    width: 12,
+                  ),
+                  Container(
+                    width: 123,
+                    height: 40.5,
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage(
+                              "assets/Logo.png",
+                            ),
+                            fit: BoxFit.fill)),
+                  ),
+                  SizedBox(
+                    width: 12,
+                  ),
+                  ClipRRect(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(2),
+                    ),
+                    child: Container(
+                      decoration: BoxDecoration(
+                          border: Border.all(
+                            color:
+                                Colors.red, //                   <--- border color
+                            width: 1.0,
                           ),
-                          fit: BoxFit.cover)),
-                ),
-                ClipRRect(
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(2),
-                  ),
-                  child: Container(
-                    decoration: BoxDecoration(
-                        border: Border.all(
-                          color: Colors
-                              .red, //                   <--- border color
-                          width: 1.0,
-                        ),
-                        color: Colors.red),
-                    height: height * 0.05,
-                    width: width * 0.3,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(
-                          Icons.call,
-                          color: Colors.white,
-                          size: 15,
-
-                        ),
-                        SizedBox(width: 5,),
-                        textWidget("Call Waiter", 0.035, Colors.white, width),
-
-                      ],
+                          color: Colors.red),
+                      height: height * 0.05,
+                      width: width * 0.3,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.call,
+                            color: Colors.white,
+                            size: 15,
+                          ),
+                          SizedBox(
+                            width: 5,
+                          ),
+                          textWidget("Call Waiter", 0.035, Colors.white, width),
+                        ],
+                      ),
                     ),
                   ),
-                ),
-                SizedBox(
-                  width: 15,
-                ),
-                ClipRRect(
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(2),
+                  SizedBox(
+                    width: 5,
                   ),
-                  child: Container(
-                    decoration: BoxDecoration(
-                        border: Border.all(
-                          color: Colors
-                              .white, //                   <--- border color
-                          width: 1.0,
-                        ),
-                        color: Colors.transparent),
-                    height: height * 0.05,
-                    width: width * 0.3,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        textWidget("More", 0.035, Colors.white, width),
-                        Icon(
-                          Icons.arrow_forward_ios_rounded,
-                          color: Colors.white,
-                          size: 15,
-
-                        ),
-                      ],
+                  ClipRRect(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(2),
+                    ),
+                    child: Container(
+                      decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Colors
+                                .white, //                   <--- border color
+                            width: 1.0,
+                          ),
+                          color: Colors.transparent),
+                      height: height * 0.05,
+                      width: width * 0.3,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          textWidget("More", 0.035, Colors.white, width),
+                          Icon(
+                            Icons.arrow_forward_ios_rounded,
+                            color: Colors.white,
+                            size: 15,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
-                ),
 
-                //textWidget("Hello World", 48, Colors.white, width),
-              ],
+                  //textWidget("Hello World", 48, Colors.white, width),
+                ],
+              ),
             )
           ],
         ),
