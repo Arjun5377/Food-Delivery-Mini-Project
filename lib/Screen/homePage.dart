@@ -26,14 +26,13 @@ class _HomeState extends State<Home> {
               fit: BoxFit.cover)),
       child: SafeArea(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 20.0),
+              padding: const EdgeInsets.symmetric(vertical: 15,horizontal: 10),
               child: Row(
                 children: [
-                  SizedBox(
-                    width: 12,
-                  ),
+
                   Container(
                     width: 123,
                     height: 40.5,
@@ -55,10 +54,11 @@ class _HomeState extends State<Home> {
                       decoration: BoxDecoration(
                           border: Border.all(
                             color:
-                                Colors.red, //                   <--- border color
+                            Color(0xffF92200), //                   <--- border color
                             width: 1.0,
                           ),
-                          color: Colors.red),
+                          color: Color(0xffF92200),
+                      ),
                       height: height * 0.05,
                       width: width * 0.3,
                       child: Row(
@@ -93,7 +93,7 @@ class _HomeState extends State<Home> {
                           ),
                           color: Colors.transparent),
                       height: height * 0.05,
-                      width: width * 0.3,
+                      width: width * 0.25,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -108,10 +108,141 @@ class _HomeState extends State<Home> {
                     ),
                   ),
 
-                  //textWidget("Hello World", 48, Colors.white, width),
+
                 ],
               ),
-            )
+            ),
+
+            SizedBox(height: 40,),
+
+
+
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                          child: Row(
+                            children: [
+                              Container(
+
+                                decoration: BoxDecoration(
+                                    border: Border.all(
+                                      color: Colors
+                                          .white, //                   <--- border color
+                                      width: 1.0,
+                                    ),
+                                    color: Colors.transparent,
+                                  shape: BoxShape.circle,
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(3.0),
+                                  child: Icon(
+                                    Icons.restaurant_menu,
+                                    color: Colors.white,
+                                    size: width*0.045,
+                                  ),
+                                ),
+                              ),
+                              SizedBox(width: 10,),
+                              textWidget("Check out the menu", 0.05, Colors.white, width),
+                            ],
+                          ),
+                        ),
+                        SizedBox(height: 10,),
+                        Container(
+                          height: height*0.65,
+                          width: width*0.7,
+                          color: Colors.white,
+                        ),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                          child: Row(
+                            children: [
+                              Container(
+
+                                decoration: BoxDecoration(
+                                  border: Border.all(
+                                    color: Colors
+                                        .white, //                   <--- border color
+                                    width: 1.0,
+                                  ),
+                                  color: Colors.transparent,
+                                  shape: BoxShape.circle,
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(3.0),
+                                  child: Icon(
+                                    Icons.filter_list,
+                                    color: Colors.white,
+                                    size: width*0.045,
+                                  ),
+                                ),
+                              ),
+                              SizedBox(width: 10,),
+                              textWidget("Filters", 0.05, Colors.white, width),
+                            ],
+                          ),
+                        ),
+                        SizedBox(height: 10,),
+                        Container(
+                          decoration: BoxDecoration(
+                              border: Border.all(
+                                color: Colors
+                                    .white, //                   <--- border color
+                                width: 1.0,
+                              ),
+                              color: Colors.transparent),
+                          height: height*0.65,
+                          width: width*0.3,
+                          //color: Colors.white,
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+
+
+
+
+// Order Items
+                Container(
+                  height: height*0.08,
+                  width: width*1,
+                  color: Color(0xffF92200),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+
+
+                      textWidget("Order Items", 0.04, Colors.white, width),
+                      SizedBox(width: 10,),
+                      CircleAvatar(
+                        radius: width*0.03,
+                        backgroundColor: Colors.white,
+                        child: Icon(
+                          Icons.arrow_forward_ios_rounded,
+                          color: Color(0xffF92200),
+                          size: width*0.037,
+                        ),
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            ),
+
+
+
           ],
         ),
       ),
